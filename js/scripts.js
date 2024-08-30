@@ -3,7 +3,21 @@ const { createApp } = Vue
     createApp({
         data() {
         return {
-            message: 'Hello Vue!'
+            missions: [
+                {
+                    text: 'fare Esercizi',
+                    done: true
+                },
+                {
+                    text: 'fare la spesa',
+                    done: false
+                },
+                {
+                    text: 'fare attività fisica',
+                    done: true
+                }
+            ],
+            
         }
         }
     }).mount('#app')

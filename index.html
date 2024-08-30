@@ -3,14 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>template Vue</title>
+        <title> Vue To Do List</title>
 
         <!-- css  -->
          <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         
-        <div id="app">{{ message }}</div>
+        <div id="app">
+
+            <div class="container ">
+                <h1>
+                    TODO LIST
+                </h1>
+
+            </div>
+
+            <div class="container ">
+                <ul>
+                    <li v-for="mission in missions" :class="mission.done == true ? 'sbarrato' : ''">
+                        {{ mission.text }}
+                        <button>x</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
         
         
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
