@@ -21,11 +21,25 @@
 
             <div class="container ">
                 <ul>
-                    <li v-for="mission in missions" :class="mission.done == true ? 'sbarrato' : ''">
+                    <li v-for="(mission, missionIndex) in missions" :class="mission.done == true ? 'sbarrato' : ''">
                         {{ mission.text }}
-                        <button>x</button>
+                        <button @click="removeMission(missionIndex)">x</button>
                     </li>
                 </ul>
+
+            </div>
+
+            <div class="container">
+                <div>
+                    <input v-model="newtext" type="text">
+
+                </div>
+                <div>
+                    <input v-model="newDone" type="text">
+
+                </div>
+
+                <button @click="addMission()">Aggiungi</button>
 
             </div>
         </div>

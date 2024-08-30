@@ -17,7 +17,20 @@ const { createApp } = Vue
                     done: true
                 }
             ],
+
+            newtext : '',
+            newDone : '',
             
         }
+        },
+        methods: {
+            removeMission(i) {
+                this.missions.splice(i, 1);
+
+            },
+            addMission() {
+                this.missions.push({text : this.newtext ,  done : this.newDone})
+                console.log(this.missions)
+            }
         }
     }).mount('#app')
