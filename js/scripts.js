@@ -19,7 +19,7 @@ const { createApp } = Vue
             ],
 
             newtext : '',
-            newDone : '',
+            // newDone : true,
             
         }
         },
@@ -29,7 +29,22 @@ const { createApp } = Vue
 
             },
             addMission() {
-                this.missions.push({text : this.newtext ,  done : this.newDone})
+                const clearNewText = this.newtext.trim();
+
+                if (clearNewText != '') {
+                    this.missions.push({text : clearNewText ,  done : this.newDone})
+                    console.log(this.missions);
+                    this.newtext = '';
+                    // this.newDone = '';
+                }
+            },
+            changeBoolean (i) {
+                if (this.missions[i].done == true) {
+                    this.missions[i].done = false
+                }
+                else {
+                    this.missions[i].done = true 
+                }
                 console.log(this.missions)
             }
         }
