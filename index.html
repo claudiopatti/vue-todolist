@@ -23,7 +23,7 @@
                 <ul>
                     <li @click="changeBoolean(missionIndex)" v-for="(mission, missionIndex) in missions" :class="mission.done == true ? 'sbarrato' : ''">
                         {{ mission.text }}
-                        <button @click="removeMission(missionIndex)">x</button>
+                        <button @click.stop="removeMission(missionIndex)">x</button>
                     </li>
                 </ul>
 
